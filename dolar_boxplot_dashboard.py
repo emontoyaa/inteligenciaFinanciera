@@ -191,8 +191,8 @@ def crear_app() -> Dash:
         return fig, tarjetas, resumen_texto(df), pie
 
     return app
-   app = crear_app()
-   server = app.server
+app = crear_app()
+server = app.server
 
 if __name__ == "__main__":
     if "--html" in sys.argv:
