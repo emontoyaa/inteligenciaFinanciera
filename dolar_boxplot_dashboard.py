@@ -191,7 +191,8 @@ def crear_app() -> Dash:
         return fig, tarjetas, resumen_texto(df), pie
 
     return app
-
+   app = crear_app()
+   server = app.server
 
 if __name__ == "__main__":
     if "--html" in sys.argv:
@@ -200,4 +201,4 @@ if __name__ == "__main__":
         figura.write_html("usd_cop_boxplot.html", include_plotlyjs="cdn")
         print("Archivo generado: usd_cop_boxplot.html")
     else:
-        crear_app().run(debug=False)
+        app.run(debug=False)
